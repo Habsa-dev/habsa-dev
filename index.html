@@ -150,6 +150,71 @@
         }
 
         /* =====================
+           PROJECT CARD (sans images)
+        ===================== */
+        .project-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin-top: 20px;
+            border-left: 4px solid #0d6efd;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .project-card p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .tech-tag {
+            display: inline-block;
+            background: #0d6efd;
+            color: white;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        .tech-tag:hover {
+            background: #0b5ed7;
+        }
+        .project-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+            padding: 0;
+        }
+        .project-features li {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #333;
+            list-style: none;
+            border: 1px solid #dee2e6;
+        }
+        .project-features li::before {
+            content: "✅ ";
+        }
+        .project-separator {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #dee2e6, transparent);
+            margin: 40px 0;
+        }
+
+        /* =====================
            CONTACT
         ===================== */
         #contact a {
@@ -233,7 +298,7 @@
 
         <div class="project">
             <h4>📌 Mobile Wallet – UI/UX Design</h4>
-            <p>Design complet de l’application mobile avec Figma.</p>
+            <p>Design complet de l'application mobile avec Figma.</p>
             <div class="project-images">
                 <div><img src="assets/img/xaliss-1.png" alt="Logo"></div>
                 <div><img src="assets/img/xaliss-2.png" alt="Créer/Connexion"></div>
@@ -242,6 +307,136 @@
                 <div><img src="assets/img/xaliss-6.png" alt="Options"></div>
             </div>
         </div>
+
+        <hr class="project-separator">
+
+        <!-- PROJET 2 -->
+        <div class="project">
+            <h4>📌 Analyse des Performances Académiques d'Étudiants (Python + Scikit-learn)</h4>
+            <div class="project-card">
+                <p>
+                    Projet d'analyse de données visant à identifier les facteurs influençant la réussite des étudiants à l'université. 
+                    Le système explore, nettoie et analyse les données de performances académiques, construit des modèles de prédiction 
+                    (régression linéaire et logistique), et génère un rapport avec des recommandations stratégiques pour l'administration.
+                </p>
+                <ul class="project-features">
+                    <li>Import et nettoyage des données CSV</li>
+                    <li>Analyse descriptive et corrélationnelle</li>
+                    <li>Heatmaps de corrélation et boxplots</li>
+                    <li>Modèle de régression (prédiction réussite)</li>
+                    <li>Rapport automatique avec recommandations</li>
+                    <li>Analyse par filière, sexe et niveau</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">NumPy</span>
+                    <span class="tech-tag">Matplotlib</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">Seaborn</span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="project-separator">
+
+        <!-- PROJET 3 -->
+        <div class="project">
+            <h4>📌 SOTU – Système d'Optimisation du Trafic Urbain (Dash + Plotly)</h4>
+            <div class="project-card">
+                <p>
+                    Solution complète d'analyse et de visualisation du trafic routier à Dakar. Le système calcule un Indice de Fluidité (IF), 
+                    détecte automatiquement les points noirs de circulation via l'algorithme DBSCAN, identifie les routes critiques, 
+                    et propose des prédictions et recommandations via un dashboard interactif professionnel.
+                </p>
+                <ul class="project-features">
+                    <li>Data Engineering : nettoyage et enrichissement</li>
+                    <li>Calcul de l'Indice de Fluidité (IF)</li>
+                    <li>Détection de points noirs (DBSCAN)</li>
+                    <li>Dashboard interactif avec carte thermique</li>
+                    <li>Comparaison inter-régionale (radar chart)</li>
+                    <li>Prédictions et recommandations de trafic</li>
+                    <li>Tests unitaires et benchmark 100k+ lignes</li>
+                    <li>Qualité logicielle (Pylint, couverture > 80%)</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">Dash</span>
+                    <span class="tech-tag">Plotly</span>
+                    <span class="tech-tag">GeoPandas</span>
+                    <span class="tech-tag">Pytest</span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="project-separator">
+
+        <!-- PROJET 5 -->
+        <div class="project">
+            <h4>📌 Analyse de Sentiments sur les Réseaux Sociaux (NLP + Flask)</h4>
+            <div class="project-card">
+                <p>
+                    Outil capable de mesurer automatiquement le « pouls » de l'opinion publique pour une marque donnée sur les réseaux sociaux. 
+                    Le projet collecte des tweets via l'API Twitter, analyse les sentiments avec NLTK, et présente les résultats 
+                    via une application web Flask moderne avec graphiques interactifs, nuage de mots et métriques clés.
+                </p>
+                <ul class="project-features">
+                    <li>Collecte de tweets via API Twitter</li>
+                    <li>Analyse de sentiments (NLP / NLTK)</li>
+                    <li>Application web Flask avec UI moderne</li>
+                    <li>Graphiques interactifs Plotly (pie, histogramme)</li>
+                    <li>Nuage de mots des tweets négatifs</li>
+                    <li>Dashboard Streamlit alternatif</li>
+                    <li>Volume temporel par heure / jour</li>
+                    <li>Top 10 tweets les plus négatifs</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">NLTK</span>
+                    <span class="tech-tag">Plotly</span>
+                    <span class="tech-tag">Streamlit</span>
+                    <span class="tech-tag">API Twitter</span>
+                    <span class="tech-tag">Jupyter Notebook</span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="project-separator">
+
+        <!-- PROJET 6 -->
+        <div class="project">
+            <h4>📌 RiskGuard 360 – Scoring Risque & Détection de Fraude (Django + IA)</h4>
+            <div class="project-card">
+                <p>
+                    Application bancaire complète de gestion des dossiers de prêt avec un moteur de scoring de risque intelligent. 
+                    Le système évalue automatiquement le profil des clients (particuliers et entreprises), calcule un score de risque 
+                    pondéré, détecte les fraudes potentielles, et fournit des explications textuelles automatiques (Explainable AI) 
+                    pour chaque décision. Gestion multi-agences avec système d'audit complet.
+                </p>
+                <ul class="project-features">
+                    <li>Gestion clients (Particulier / Entreprise)</li>
+                    <li>Moteur de scoring risque pondéré (4 critères)</li>
+                    <li>Détection de fraude automatique</li>
+                    <li>Explainable AI (justification des scores)</li>
+                    <li>Workflow de dossiers (Soumis → Validé/Refusé)</li>
+                    <li>Simulation de prêt avec amortissement</li>
+                    <li>Gestion multi-agences (SaaS)</li>
+                    <li>API REST + système d'audit complet</li>
+                </ul>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Django</span>
+                    <span class="tech-tag">Django REST Framework</span>
+                    <span class="tech-tag">SQLite</span>
+                    <span class="tech-tag">Bootstrap</span>
+                    <span class="tech-tag">IA / Scoring</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
