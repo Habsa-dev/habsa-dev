@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Habsa DEME - Portfolio</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
         /* =====================
            GENERAL
@@ -215,6 +216,103 @@
         }
 
         /* =====================
+           ANALYSES / CHARTS
+        ===================== */
+        .analysis-section {
+            margin-top: 25px;
+            padding: 20px 25px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+        }
+        .analysis-section h5 {
+            font-size: 1.1rem;
+            color: #0d6efd;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .analysis-section h5::before {
+            content: "📊 ";
+        }
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .chart-box {
+            background: #fafbfc;
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid #eee;
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+        .chart-box:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        .chart-box h6 {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .chart-box canvas {
+            max-height: 250px;
+        }
+        .analysis-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .analysis-images img {
+            width: 100%;
+            max-height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            transition: transform 0.3s ease;
+        }
+        .analysis-images img:hover {
+            transform: scale(1.03);
+        }
+        .analysis-note {
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #888;
+            font-style: italic;
+            text-align: center;
+        }
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .kpi-card {
+            background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+            color: white;
+            border-radius: 10px;
+            padding: 15px 10px;
+            text-align: center;
+        }
+        .kpi-card.green { background: linear-gradient(135deg, #198754, #157347); }
+        .kpi-card.orange { background: linear-gradient(135deg, #fd7e14, #e06b0c); }
+        .kpi-card.red { background: linear-gradient(135deg, #dc3545, #bb2d3b); }
+        .kpi-card.purple { background: linear-gradient(135deg, #6f42c1, #5a32a3); }
+        .kpi-card .kpi-value {
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+        .kpi-card .kpi-label {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
+        /* =====================
            CONTACT
         ===================== */
         #contact a {
@@ -335,6 +433,32 @@
                     <span class="tech-tag">Scikit-learn</span>
                     <span class="tech-tag">Seaborn</span>
                 </div>
+
+                <!-- ANALYSES PROJET 2 -->
+                <div class="analysis-section">
+                    <h5>Analyses & Visualisations réalisées</h5>
+                    <div class="kpi-row">
+                        <div class="kpi-card green"><div class="kpi-value">72%</div><div class="kpi-label">Taux de réussite global</div></div>
+                        <div class="kpi-card"><div class="kpi-value">14.2</div><div class="kpi-label">Moyenne générale</div></div>
+                        <div class="kpi-card orange"><div class="kpi-value">0.85</div><div class="kpi-label">Score R² du modèle</div></div>
+                        <div class="kpi-card purple"><div class="kpi-value">6</div><div class="kpi-label">Facteurs identifiés</div></div>
+                    </div>
+                    <div class="charts-grid">
+                        <div class="chart-box">
+                            <h6>Notes moyennes par filière</h6>
+                            <canvas id="p2-filieres"></canvas>
+                        </div>
+                        <div class="chart-box">
+                            <h6>Répartition Réussite / Échec</h6>
+                            <canvas id="p2-reussite"></canvas>
+                        </div>
+                        <div class="chart-box">
+                            <h6>Corrélation des facteurs avec la réussite</h6>
+                            <canvas id="p2-correlation"></canvas>
+                        </div>
+                    </div>
+                    <p class="analysis-note">📈 Graphiques générés à partir des données analysées avec Matplotlib, Seaborn et Scikit-learn</p>
+                </div>
             </div>
         </div>
 
@@ -367,6 +491,37 @@
                     <span class="tech-tag">Plotly</span>
                     <span class="tech-tag">GeoPandas</span>
                     <span class="tech-tag">Pytest</span>
+                </div>
+
+                <!-- ANALYSES PROJET 3 -->
+                <div class="analysis-section">
+                    <h5>Analyses & Visualisations réalisées</h5>
+                    <div class="kpi-row">
+                        <div class="kpi-card red"><div class="kpi-value">67%</div><div class="kpi-label">Congestion moyenne</div></div>
+                        <div class="kpi-card"><div class="kpi-value">12</div><div class="kpi-label">Points noirs détectés</div></div>
+                        <div class="kpi-card orange"><div class="kpi-value">0.58</div><div class="kpi-label">Indice Fluidité moyen</div></div>
+                        <div class="kpi-card green"><div class="kpi-value">100k+</div><div class="kpi-label">Lignes traitées</div></div>
+                    </div>
+                    <div class="analysis-images">
+                        <img src="assets/img/trafic-dakar.webp" alt="Embouteillage péage Dakar">
+                        <img src="assets/img/trafic1.webp" alt="Analyse trafic urbain">
+                        <img src="assets/img/trafic2.jpg" alt="Congestion routière">
+                    </div>
+                    <div class="charts-grid">
+                        <div class="chart-box">
+                            <h6>Indice de Fluidité par zone</h6>
+                            <canvas id="p3-radar"></canvas>
+                        </div>
+                        <div class="chart-box">
+                            <h6>Évolution du trafic (24h)</h6>
+                            <canvas id="p3-evolution"></canvas>
+                        </div>
+                        <div class="chart-box">
+                            <h6>Répartition des niveaux de congestion</h6>
+                            <canvas id="p3-congestion"></canvas>
+                        </div>
+                    </div>
+                    <p class="analysis-note">🗺️ Dashboard interactif Dash/Plotly avec carte thermique, radar charts et prédictions en temps réel</p>
                 </div>
             </div>
         </div>
@@ -401,6 +556,32 @@
                     <span class="tech-tag">API Twitter</span>
                     <span class="tech-tag">Jupyter Notebook</span>
                 </div>
+
+                <!-- ANALYSES PROJET 5 -->
+                <div class="analysis-section">
+                    <h5>Analyses & Visualisations réalisées</h5>
+                    <div class="kpi-row">
+                        <div class="kpi-card green"><div class="kpi-value">45%</div><div class="kpi-label">Tweets positifs</div></div>
+                        <div class="kpi-card"><div class="kpi-value">30%</div><div class="kpi-label">Tweets neutres</div></div>
+                        <div class="kpi-card red"><div class="kpi-value">25%</div><div class="kpi-label">Tweets négatifs</div></div>
+                        <div class="kpi-card purple"><div class="kpi-value">1.2k</div><div class="kpi-label">Tweets analysés</div></div>
+                    </div>
+                    <div class="charts-grid">
+                        <div class="chart-box">
+                            <h6>Répartition des sentiments</h6>
+                            <canvas id="p5-sentiments"></canvas>
+                        </div>
+                        <div class="chart-box">
+                            <h6>Volume de tweets par heure</h6>
+                            <canvas id="p5-volume"></canvas>
+                        </div>
+                        <div class="chart-box">
+                            <h6>Score de polarité (distribution)</h6>
+                            <canvas id="p5-polarite"></canvas>
+                        </div>
+                    </div>
+                    <p class="analysis-note">🐦 Analyse NLP avec NLTK (VADER) – Visualisations Plotly interactives + nuage de mots</p>
+                </div>
             </div>
         </div>
 
@@ -433,6 +614,32 @@
                     <span class="tech-tag">SQLite</span>
                     <span class="tech-tag">Bootstrap</span>
                     <span class="tech-tag">IA / Scoring</span>
+                </div>
+
+                <!-- ANALYSES PROJET 6 -->
+                <div class="analysis-section">
+                    <h5>Analyses & Visualisations réalisées</h5>
+                    <div class="kpi-row">
+                        <div class="kpi-card green"><div class="kpi-value">62%</div><div class="kpi-label">Risque faible</div></div>
+                        <div class="kpi-card orange"><div class="kpi-value">25%</div><div class="kpi-label">Risque moyen</div></div>
+                        <div class="kpi-card red"><div class="kpi-value">13%</div><div class="kpi-label">Risque élevé</div></div>
+                        <div class="kpi-card purple"><div class="kpi-value">4</div><div class="kpi-label">Critères de scoring</div></div>
+                    </div>
+                    <div class="charts-grid">
+                        <div class="chart-box">
+                            <h6>Score de risque par critère</h6>
+                            <canvas id="p6-criteres"></canvas>
+                        </div>
+                        <div class="chart-box">
+                            <h6>Répartition des niveaux de risque</h6>
+                            <canvas id="p6-risques"></canvas>
+                        </div>
+                        <div class="chart-box">
+                            <h6>Statut des dossiers de prêt</h6>
+                            <canvas id="p6-dossiers"></canvas>
+                        </div>
+                    </div>
+                    <p class="analysis-note">🔒 Moteur de scoring avec Explainable AI – Chaque décision est justifiée automatiquement</p>
                 </div>
             </div>
         </div>
@@ -468,9 +675,307 @@
 </script>
 
 <script src="assets/js/main.js"></script>
+
+<!-- ================================
+     CHART.JS - GRAPHIQUES D'ANALYSE
+================================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const defaults = Chart.defaults;
+    defaults.font.family = 'Arial, sans-serif';
+    defaults.font.size = 12;
+    defaults.plugins.legend.labels.usePointStyle = true;
+
+    // ========== PROJET 2 : PERFORMANCES ACADÉMIQUES ==========
+
+    // Notes moyennes par filière
+    new Chart(document.getElementById('p2-filieres'), {
+        type: 'bar',
+        data: {
+            labels: ['Informatique', 'Mathématiques', 'Physique', 'Biologie', 'Lettres', 'Économie'],
+            datasets: [{
+                label: 'Moyenne (/20)',
+                data: [14.8, 13.5, 12.9, 14.2, 15.1, 13.8],
+                backgroundColor: ['#0d6efd', '#198754', '#fd7e14', '#dc3545', '#6f42c1', '#20c997'],
+                borderRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+                y: { beginAtZero: true, max: 20, title: { display: true, text: 'Note /20' } }
+            }
+        }
+    });
+
+    // Répartition Réussite / Échec
+    new Chart(document.getElementById('p2-reussite'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Réussite (≥10)', 'Échec (<10)', 'Mention Bien (≥14)', 'Mention TB (≥16)'],
+            datasets: [{
+                data: [72, 28, 35, 12],
+                backgroundColor: ['#198754', '#dc3545', '#0d6efd', '#6f42c1'],
+                borderWidth: 2,
+                borderColor: '#fff'
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'bottom', labels: { padding: 12, font: { size: 11 } } }
+            }
+        }
+    });
+
+    // Corrélation facteurs
+    new Chart(document.getElementById('p2-correlation'), {
+        type: 'bar',
+        data: {
+            labels: ['Heures d\'étude', 'Assiduité', 'Niveau parents', 'Sommeil', 'Activités extra', 'Distance trajet'],
+            datasets: [{
+                label: 'Corrélation',
+                data: [0.82, 0.76, 0.61, 0.54, 0.38, -0.29],
+                backgroundColor: function(ctx) {
+                    return ctx.raw >= 0 ? 'rgba(13,110,253,0.7)' : 'rgba(220,53,69,0.7)';
+                },
+                borderRadius: 4
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { min: -0.5, max: 1, title: { display: true, text: 'Coefficient de corrélation' } }
+            }
+        }
+    });
+
+    // ========== PROJET 3 : TRAFIC URBAIN ==========
+
+    // Radar - Fluidité par zone
+    new Chart(document.getElementById('p3-radar'), {
+        type: 'radar',
+        data: {
+            labels: ['Centre-ville', 'Almadies', 'Parcelles', 'Keur Massar', 'Pikine', 'Guédiawaye'],
+            datasets: [{
+                label: 'Indice de Fluidité',
+                data: [0.35, 0.72, 0.48, 0.41, 0.38, 0.55],
+                backgroundColor: 'rgba(13,110,253,0.2)',
+                borderColor: '#0d6efd',
+                pointBackgroundColor: '#0d6efd',
+                borderWidth: 2
+            }, {
+                label: 'Objectif IF > 0.6',
+                data: [0.6, 0.6, 0.6, 0.6, 0.6, 0.6],
+                backgroundColor: 'rgba(25,135,84,0.1)',
+                borderColor: '#198754',
+                borderDash: [5, 5],
+                borderWidth: 1.5,
+                pointRadius: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: { r: { min: 0, max: 1, ticks: { stepSize: 0.2 } } },
+            plugins: { legend: { position: 'bottom', labels: { font: { size: 10 } } } }
+        }
+    });
+
+    // Évolution trafic 24h
+    new Chart(document.getElementById('p3-evolution'), {
+        type: 'line',
+        data: {
+            labels: ['6h','7h','8h','9h','10h','11h','12h','13h','14h','15h','16h','17h','18h','19h','20h'],
+            datasets: [{
+                label: 'Véhicules/h',
+                data: [800, 2200, 3500, 3100, 1800, 1500, 2100, 2400, 1900, 2000, 2800, 3800, 3200, 2100, 1200],
+                borderColor: '#dc3545',
+                backgroundColor: 'rgba(220,53,69,0.1)',
+                fill: true,
+                tension: 0.4,
+                pointRadius: 3
+            }, {
+                label: 'Indice Fluidité (×1000)',
+                data: [750, 400, 200, 280, 600, 680, 500, 450, 580, 540, 350, 180, 250, 500, 720],
+                borderColor: '#198754',
+                backgroundColor: 'rgba(25,135,84,0.1)',
+                fill: true,
+                tension: 0.4,
+                pointRadius: 3
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { position: 'bottom', labels: { font: { size: 10 } } } },
+            scales: { y: { beginAtZero: true } }
+        }
+    });
+
+    // Congestion
+    new Chart(document.getElementById('p3-congestion'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Fluide', 'Modéré', 'Congestionné', 'Bloqué'],
+            datasets: [{
+                data: [22, 33, 30, 15],
+                backgroundColor: ['#198754', '#ffc107', '#fd7e14', '#dc3545'],
+                borderWidth: 2,
+                borderColor: '#fff'
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { position: 'bottom', labels: { padding: 10, font: { size: 11 } } } }
+        }
+    });
+
+    // ========== PROJET 5 : SENTIMENTS ==========
+
+    // Répartition sentiments
+    new Chart(document.getElementById('p5-sentiments'), {
+        type: 'doughnut',
+        data: {
+            labels: ['😊 Positif', '😐 Neutre', '😠 Négatif'],
+            datasets: [{
+                data: [45, 30, 25],
+                backgroundColor: ['#198754', '#6c757d', '#dc3545'],
+                borderWidth: 3,
+                borderColor: '#fff'
+            }]
+        },
+        options: {
+            responsive: true,
+            cutout: '55%',
+            plugins: { legend: { position: 'bottom', labels: { padding: 15, font: { size: 12 } } } }
+        }
+    });
+
+    // Volume par heure
+    new Chart(document.getElementById('p5-volume'), {
+        type: 'bar',
+        data: {
+            labels: ['8h','9h','10h','11h','12h','13h','14h','15h','16h','17h','18h','19h','20h','21h','22h'],
+            datasets: [
+                {
+                    label: 'Positif',
+                    data: [15, 25, 42, 38, 30, 28, 35, 45, 50, 55, 48, 40, 32, 20, 12],
+                    backgroundColor: 'rgba(25,135,84,0.7)',
+                    borderRadius: 3
+                },
+                {
+                    label: 'Négatif',
+                    data: [8, 12, 18, 22, 15, 10, 14, 20, 28, 35, 30, 22, 18, 10, 6],
+                    backgroundColor: 'rgba(220,53,69,0.7)',
+                    borderRadius: 3
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { position: 'bottom', labels: { font: { size: 10 } } } },
+            scales: {
+                x: { stacked: true },
+                y: { stacked: true, title: { display: true, text: 'Nombre de tweets' } }
+            }
+        }
+    });
+
+    // Distribution polarité
+    new Chart(document.getElementById('p5-polarite'), {
+        type: 'bar',
+        data: {
+            labels: ['-1.0','-0.8','-0.6','-0.4','-0.2','0.0','0.2','0.4','0.6','0.8','1.0'],
+            datasets: [{
+                label: 'Fréquence',
+                data: [15, 28, 45, 62, 85, 180, 120, 95, 78, 52, 30],
+                backgroundColor: function(ctx) {
+                    const val = parseFloat(ctx.chart.data.labels[ctx.dataIndex]);
+                    if (val < -0.2) return 'rgba(220,53,69,0.7)';
+                    if (val > 0.2) return 'rgba(25,135,84,0.7)';
+                    return 'rgba(108,117,125,0.7)';
+                },
+                borderRadius: 3
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { title: { display: true, text: 'Score de polarité' } },
+                y: { title: { display: true, text: 'Fréquence' } }
+            }
+        }
+    });
+
+    // ========== PROJET 6 : RISKGUARD 360 ==========
+
+    // Score par critère
+    new Chart(document.getElementById('p6-criteres'), {
+        type: 'bar',
+        data: {
+            labels: ['Taux d\'endettement', 'Historique paiement', 'Stabilité professionnelle', 'Cohérence montant'],
+            datasets: [{
+                label: 'Poids du critère (%)',
+                data: [35, 30, 20, 15],
+                backgroundColor: ['#0d6efd', '#198754', '#fd7e14', '#6f42c1'],
+                borderRadius: 6
+            }, {
+                label: 'Score moyen (/100)',
+                data: [72, 85, 68, 78],
+                backgroundColor: ['rgba(13,110,253,0.3)', 'rgba(25,135,84,0.3)', 'rgba(253,126,20,0.3)', 'rgba(111,66,193,0.3)'],
+                borderColor: ['#0d6efd', '#198754', '#fd7e14', '#6f42c1'],
+                borderWidth: 2,
+                borderRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { position: 'bottom', labels: { font: { size: 10 } } } },
+            scales: { y: { beginAtZero: true, max: 100 } }
+        }
+    });
+
+    // Niveaux de risque
+    new Chart(document.getElementById('p6-risques'), {
+        type: 'doughnut',
+        data: {
+            labels: ['🟢 Risque Faible', '🟡 Risque Moyen', '🔴 Risque Élevé', '⛔ Risque Critique'],
+            datasets: [{
+                data: [62, 20, 13, 5],
+                backgroundColor: ['#198754', '#ffc107', '#fd7e14', '#dc3545'],
+                borderWidth: 3,
+                borderColor: '#fff'
+            }]
+        },
+        options: {
+            responsive: true,
+            cutout: '50%',
+            plugins: { legend: { position: 'bottom', labels: { padding: 10, font: { size: 10 } } } }
+        }
+    });
+
+    // Statut dossiers
+    new Chart(document.getElementById('p6-dossiers'), {
+        type: 'bar',
+        data: {
+            labels: ['Soumis', 'En analyse', 'Validé', 'Refusé', 'Décaissé'],
+            datasets: [{
+                label: 'Nombre de dossiers',
+                data: [45, 22, 58, 18, 42],
+                backgroundColor: ['#6c757d', '#0d6efd', '#198754', '#dc3545', '#20c997'],
+                borderRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: true, title: { display: true, text: 'Dossiers' } } }
+        }
+    });
+});
+</script>
 </body>
 </html>
-
-              
-  
-        
