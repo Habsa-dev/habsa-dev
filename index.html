@@ -21,10 +21,10 @@
            CSS VARIABLES
         ===================== */
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
             --primary-light: #dbeafe;
-            --accent: #06b6d4;
+            --accent: #0891b2;
             --dark: #0f172a;
             --dark-2: #1e293b;
             --gray-50: #f8fafc;
@@ -64,6 +64,57 @@
             scroll-padding-top: 80px;
         }
 
+        /* =====================
+           LOADING SCREEN
+        ===================== */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .loading-logo span {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .loading-spinner {
+            width: 48px;
+            height: 48px;
+            border: 3px solid rgba(255,255,255,0.1);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--gray-700);
@@ -77,7 +128,7 @@
         img { max-width: 100%; display: block; }
 
         .container {
-            max-width: 1140px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
@@ -131,9 +182,9 @@
 
         .nav-links a {
             color: var(--gray-400);
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             font-weight: 500;
-            padding: 8px 16px;
+            padding: 10px 18px;
             border-radius: 8px;
             transition: var(--transition);
         }
@@ -147,7 +198,7 @@
         .nav-cta {
             background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
             color: var(--white) !important;
-            padding: 8px 20px !important;
+            padding: 10px 22px !important;
             border-radius: 8px !important;
             font-weight: 600 !important;
         }
@@ -392,6 +443,183 @@
             color: var(--gray-500);
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        /* =====================
+           PROFILE SECTION
+        ===================== */
+        #profile {
+            background: var(--white);
+        }
+
+        .profile-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .profile-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-intro h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .profile-intro p {
+            font-size: 1.05rem;
+            color: var(--gray-600);
+            line-height: 1.8;
+        }
+
+        .profile-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .profile-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            padding: 28px;
+            transition: var(--transition);
+        }
+
+        .profile-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .profile-card-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px;
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .profile-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .profile-card p {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* =====================
+           EXPERIENCE SECTION
+        ===================== */
+        #experience {
+            background: var(--gray-50);
+        }
+
+        .experience-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .experience-item {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            margin-bottom: 24px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .experience-item:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -16px;
+            top: 32px;
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 4px var(--primary-light);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .experience-title h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .experience-title .company {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .experience-date {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .experience-desc {
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .experience-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .experience-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            background: var(--gray-50);
+            border-radius: 8px;
+            font-size: 0.88rem;
+            color: var(--gray-700);
+            border: 1px solid var(--gray-100);
+        }
+
+        .experience-feature i {
+            color: var(--green);
+            font-size: 0.75rem;
         }
 
         /* =====================
@@ -1103,6 +1331,13 @@
             .about-info { justify-items: center; }
             .about-photo { order: -1; }
 
+            .profile-details { grid-template-columns: 1fr; }
+
+            .experience-item::before { display: none; }
+            .experience-item { padding: 24px; }
+            .experience-header { flex-direction: column; }
+            .experience-features { grid-template-columns: 1fr; }
+
             .section-title { font-size: 1.8rem; }
 
             .project-header { flex-direction: column; text-align: center; }
@@ -1115,20 +1350,36 @@
 
             .charts-grid { grid-template-columns: 1fr; }
         }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.8rem; }
+            .section-title { font-size: 1.5rem; }
+            .hero-stat-value { font-size: 1.6rem; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .profile-details { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
+
+<!-- ========== LOADING SCREEN ========== -->
+<div class="loading-screen" id="loadingScreen">
+    <div class="loading-logo"><span>H</span>absa.</div>
+    <div class="loading-spinner"></div>
+</div>
 
 <!-- ========== NAVBAR ========== -->
 <nav class="navbar" id="navbar">
     <div class="container">
         <a href="#" class="nav-logo"><span>H</span>absa.</a>
         <div class="nav-links" id="navLinks">
-            <a href="#about">À propos</a>
+            <a href="#profile">Profil</a>
+            <a href="#experience">Expérience</a>
             <a href="#skills">Compétences</a>
             <a href="#projects">Projets</a>
             <a href="#contact">Contact</a>
-            <a href="cv-HABSA DEME.pdf" download class="nav-cta"><i class="fas fa-download"></i> CV</a>
+            <a href="Habsa Deme_CV.pdf" download class="nav-cta"><i class="fas fa-download"></i> CV</a>
         </div>
         <button class="nav-toggle" id="navToggle" aria-label="Menu">
             <i class="fas fa-bars"></i>
@@ -1178,6 +1429,86 @@
         </div>
         <div class="hero-image">
             <img src="assets/img/profile3.jpeg" alt="Habsa DEME">
+        </div>
+    </div>
+</section>
+
+<!-- ========== PROFILE ========== -->
+<section id="profile">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Profil</div>
+            <h2 class="section-title">Mon Parcours Académique</h2>
+            <p class="section-subtitle">Étudiante en Licence 3 Informatique – Science des Données à BEM TECH</p>
+        </div>
+        <div class="profile-content reveal">
+            <div class="profile-intro">
+                <h3>Étudiante passionnée en Science des Données</h3>
+                <p>
+                    Actuellement en Licence 3 Informatique – Science des Données à BEM TECH, je me spécialise dans l'analyse de données, 
+                    le machine learning et le développement web. Mon parcours académique combine théorie et pratique 
+                    pour développer des compétences solides en data science et développement d'applications.
+                </p>
+            </div>
+            <div class="profile-details">
+                <div class="profile-card">
+                    <div class="profile-card-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h4>Formation Actuelle</h4>
+                    <p>Licence 3 Informatique – Science des Données<br>BEM TECH, Dakar</p>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h4>Spécialisations</h4>
+                    <p>Data Science, Machine Learning, Analyse de données, Visualisation</p>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-card-icon"><i class="fas fa-code"></i></div>
+                    <h4>Compétences Techniques</h4>
+                    <p>Python, Django, SQL, Pandas, Scikit-learn, Plotly, Dash</p>
+                </div>
+                <div class="profile-card">
+                    <div class="profile-card-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h4>Projets Académiques</h4>
+                    <p>6+ projets réalisés en data science, développement web et NLP</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== EXPERIENCE ========== -->
+<section id="experience">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Expérience</div>
+            <h2 class="section-title">Mon Expérience Professionnelle</h2>
+            <p class="section-subtitle">Stage de développement Django à NETSYSTEME</p>
+        </div>
+        <div class="experience-timeline reveal">
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div class="experience-title">
+                        <h3>Stagiaire Développeuse Django</h3>
+                        <div class="company">NETSYSTEME</div>
+                    </div>
+                    <div class="experience-date">Stage</div>
+                </div>
+                <p class="experience-desc">
+                    Développement d'une application Django complète pour la gestion scolaire. 
+                    Conception et implémentation de fonctionnalités clés pour la gestion des élèves, 
+                    enseignants, notes, présences et finances, avec un espace dédié aux parents.
+                </p>
+                <div class="experience-features">
+                    <div class="experience-feature"><i class="fas fa-check-circle"></i> Gestion des élèves</div>
+                    <div class="experience-feature"><i class="fas fa-check-circle"></i> Gestion enseignants</div>
+                    <div class="experience-feature"><i class="fas fa-check-circle"></i> Système de notes</div>
+                    <div class="experience-feature"><i class="fas fa-check-circle"></i> Suivi présences</div>
+                    <div class="experience-feature"><i class="fas fa-check-circle"></i> Gestion finances</div>
+                    <div class="experience-feature"><i class="fas fa-check-circle"></i> Espace parent</div>
+                    <div class="experience-feature"><i class="fas fa-check-circle"></i> Django Framework</div>
+                    <div class="experience-feature"><i class="fas fa-check-circle"></i> Base de données</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -1232,7 +1563,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="cv-HABSA DEME.pdf" download class="btn-cv">
+                <a href="Habsa Deme_CV.pdf" download class="btn-cv">
                     <i class="fas fa-download"></i> Télécharger mon CV
                 </a>
             </div>
@@ -1592,6 +1923,77 @@
             </div>
         </div>
 
+        <!-- PROJET NETSYSTEME -->
+        <div class="project-block reveal">
+            <div class="project-header">
+                <div class="project-number">07</div>
+                <div>
+                    <h3>NETSYSTEME – Application de Gestion Scolaire</h3>
+                    <div class="project-subtitle">Django • Stage professionnel</div>
+                </div>
+            </div>
+            <div class="project-body">
+                <p class="project-desc">
+                    Application Django complète développée lors de mon stage chez NETSYSTEME. 
+                    Système de gestion scolaire intégrant la gestion des élèves, enseignants, notes, 
+                    présences, finances et un espace dédié aux parents pour le suivi de leurs enfants.
+                </p>
+                <div class="features-grid">
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Gestion complète des élèves</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Gestion des enseignants</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Système de notes et bulletins</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Suivi des présences</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Gestion financière</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Espace parent interactif</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Dashboard administrateur</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Rapports statistiques</div>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                    <span class="tech-tag"><i class="fas fa-leaf"></i> Django</span>
+                    <span class="tech-tag"><i class="fas fa-plug"></i> REST Framework</span>
+                    <span class="tech-tag"><i class="fas fa-database"></i> PostgreSQL</span>
+                    <span class="tech-tag"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                    <span class="tech-tag"><i class="fas fa-user-shield"></i> Authentification</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJET CAMUSAT -->
+        <div class="project-block reveal">
+            <div class="project-header">
+                <div class="project-number">08</div>
+                <div>
+                    <h3>Site Camusat – Site Web Corporate</h3>
+                    <div class="project-subtitle">HTML/CSS/JavaScript • Développement Web</div>
+                </div>
+            </div>
+            <div class="project-body">
+                <p class="project-desc">
+                    Développement du site web corporate de Camusat, entreprise spécialisée dans les solutions de télécommunications. 
+                    Site moderne et responsive présentant les services, produits et actualités de l'entreprise avec une interface utilisateur optimisée.
+                </p>
+                <div class="features-grid">
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Design responsive moderne</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Présentation des services</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Catalogue produits</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Section actualités</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Formulaire de contact</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Optimisation SEO</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Performance optimisée</div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i> Navigation intuitive</div>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag"><i class="fab fa-html5"></i> HTML5</span>
+                    <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+                    <span class="tech-tag"><i class="fab fa-js"></i> JavaScript</span>
+                    <span class="tech-tag"><i class="fas fa-mobile-alt"></i> Responsive</span>
+                    <span class="tech-tag"><i class="fas fa-paint-brush"></i> UI/UX Design</span>
+                    <span class="tech-tag"><i class="fas fa-tachometer-alt"></i> Performance</span>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -1635,17 +2037,25 @@
 <!-- ========== FOOTER ========== -->
 <footer class="footer">
     <div class="container">
-        <div class="footer-text">© 2025 Habsa DEME — Tous droits réservés</div>
+        <div class="footer-text">© 2026 Habsa DEME — Tous droits réservés</div>
         <div class="footer-social">
             <a href="mailto:habsademe10@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             <a href="https://github.com/habsa-dev" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.linkedin.com/in/habsa-deme-4275272a5/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
     </div>
 </footer>
 
 <!-- ========== SCRIPTS ========== -->
 <script>
+// Loading screen
+window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loadingScreen');
+    setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+    }, 500);
+});
+
 // Navbar scroll effect
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -1659,7 +2069,20 @@ document.getElementById('navToggle').addEventListener('click', () => {
 
 // Close mobile menu on link click
 document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
         document.getElementById('navLinks').classList.remove('open');
     });
 });
