@@ -1235,6 +1235,47 @@
             margin-bottom: 24px;
         }
 
+        .project-role-result {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .project-role, .project-result {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        .project-role:hover, .project-result:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .project-role h4, .project-result h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .project-role h4 i, .project-result h4 i {
+            color: var(--primary);
+        }
+
+        .project-role p, .project-result p {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin: 0;
+        }
+
         /* Screenshots Grid */
         .screenshots-grid {
             display: grid;
@@ -2330,6 +2371,16 @@
                     Application complète pour la gestion des ventes, utilisateurs et rapports analytiques d'un supermarché. 
                     Trois interfaces dédiées (Admin, Gérant, Caissier) avec un système de rapports et visualisations intégrées.
                 </p>
+                <div class="project-role-result">
+                    <div class="project-role">
+                        <h4><i class="fas fa-user-tie"></i> Rôle</h4>
+                        <p>Développeur full stack</p>
+                    </div>
+                    <div class="project-result">
+                        <h4><i class="fas fa-trophy"></i> Résultat</h4>
+                        <p>Digitalisation complète de la gestion des ventes et rapports analytiques en temps réel</p>
+                    </div>
+                </div>
                 <div class="screenshots-grid">
                     <img src="assets/img/admin-dash.png" alt="Admin Dashboard">
                     <img src="assets/img/admin-users.png" alt="Gestion utilisateurs">
@@ -2384,6 +2435,16 @@
                     Design complet d'une application mobile de portefeuille électronique avec Figma. 
                     Prototypage interactif, système de design cohérent et parcours utilisateur optimisé.
                 </p>
+                <div class="project-role-result">
+                    <div class="project-role">
+                        <h4><i class="fas fa-user-tie"></i> Rôle</h4>
+                        <p>UI/UX Designer</p>
+                    </div>
+                    <div class="project-result">
+                        <h4><i class="fas fa-trophy"></i> Résultat</h4>
+                        <p>Design complet et prototypage interactif d'une application mobile de paiement</p>
+                    </div>
+                </div>
                 <div class="screenshots-grid">
                     <img src="assets/img/xaliss-1.png" alt="Logo Xaliss">
                     <img src="assets/img/xaliss-2.png" alt="Créer/Connexion">
@@ -2415,6 +2476,16 @@
                     Le système explore, nettoie et analyse les données de performances académiques, construit des modèles de prédiction 
                     (régression linéaire et logistique), et génère un rapport avec des recommandations stratégiques.
                 </p>
+                <div class="project-role-result">
+                    <div class="project-role">
+                        <h4><i class="fas fa-user-tie"></i> Rôle</h4>
+                        <p>Data Scientist</p>
+                    </div>
+                    <div class="project-result">
+                        <h4><i class="fas fa-trophy"></i> Résultat</h4>
+                        <p>Modèle de prédiction avec 85% de précision pour identifier les facteurs de réussite</p>
+                    </div>
+                </div>
                 <div class="features-grid">
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Import et nettoyage des données CSV</div>
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Analyse descriptive et corrélationnelle</div>
@@ -2465,6 +2536,16 @@
                     détecte automatiquement les points noirs de circulation via l'algorithme DBSCAN, identifie les routes critiques, 
                     et propose des prédictions via un dashboard interactif professionnel.
                 </p>
+                <div class="project-role-result">
+                    <div class="project-role">
+                        <h4><i class="fas fa-user-tie"></i> Rôle</h4>
+                        <p>Data Engineer & Data Scientist</p>
+                    </div>
+                    <div class="project-result">
+                        <h4><i class="fas fa-trophy"></i> Résultat</h4>
+                        <p>Dashboard interactif avec détection automatique des points noirs de circulation</p>
+                    </div>
+                </div>
                 <div class="features-grid">
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Data Engineering : nettoyage et enrichissement</div>
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Calcul de l'Indice de Fluidité (IF)</div>
@@ -2521,6 +2602,16 @@
                     Collecte de tweets via l'API Twitter, analyse des sentiments avec NLTK, et présentation 
                     via une application web Flask avec graphiques interactifs, nuage de mots et métriques clés.
                 </p>
+                <div class="project-role-result">
+                    <div class="project-role">
+                        <h4><i class="fas fa-user-tie"></i> Rôle</h4>
+                        <p>NLP Engineer & Full Stack Developer</p>
+                    </div>
+                    <div class="project-result">
+                        <h4><i class="fas fa-trophy"></i> Résultat</h4>
+                        <p>Application web d'analyse de sentiments avec visualisations interactives en temps réel</p>
+                    </div>
+                </div>
                 <div class="features-grid">
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Collecte de tweets via API Twitter</div>
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Analyse de sentiments (NLP / NLTK)</div>
@@ -2571,6 +2662,16 @@
                     Évalue automatiquement les clients, calcule un score de risque pondéré, détecte les fraudes, 
                     et fournit des explications automatiques (Explainable AI) pour chaque décision. Gestion multi-agences avec audit complet.
                 </p>
+                <div class="project-role-result">
+                    <div class="project-role">
+                        <h4><i class="fas fa-user-tie"></i> Rôle</h4>
+                        <p>Développeur Full Stack & IA</p>
+                    </div>
+                    <div class="project-result">
+                        <h4><i class="fas fa-trophy"></i> Résultat</h4>
+                        <p>Moteur de scoring intelligent avec Explainable AI pour la détection de fraude</p>
+                    </div>
+                </div>
                 <div class="features-grid">
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Gestion clients (Particulier / Entreprise)</div>
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Moteur de scoring risque pondéré (4 critères)</div>
@@ -2621,6 +2722,16 @@
                     Système de gestion scolaire intégrant la gestion des élèves, enseignants, notes, 
                     présences, finances et un espace dédié aux parents pour le suivi de leurs enfants.
                 </p>
+                <div class="project-role-result">
+                    <div class="project-role">
+                        <h4><i class="fas fa-user-tie"></i> Rôle</h4>
+                        <p>Développeur Full Stack Django</p>
+                    </div>
+                    <div class="project-result">
+                        <h4><i class="fas fa-trophy"></i> Résultat</h4>
+                        <p>Digitalisation complète de la gestion scolaire (élèves, enseignants, notes, finances)</p>
+                    </div>
+                </div>
                 <div class="features-grid">
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Gestion complète des élèves</div>
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Gestion des enseignants</div>
@@ -2691,6 +2802,16 @@
                     Développement du site web corporate de Camusat, entreprise spécialisée dans les solutions de télécommunications. 
                     Site moderne et responsive présentant les services, produits et actualités de l'entreprise avec une interface utilisateur optimisée.
                 </p>
+                <div class="project-role-result">
+                    <div class="project-role">
+                        <h4><i class="fas fa-user-tie"></i> Rôle</h4>
+                        <p>Développeur Frontend</p>
+                    </div>
+                    <div class="project-result">
+                        <h4><i class="fas fa-trophy"></i> Résultat</h4>
+                        <p>Site web corporate moderne et responsive pour Camusat</p>
+                    </div>
+                </div>
                 <div class="features-grid">
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Design responsive moderne</div>
                     <div class="feature-item"><i class="fas fa-check-circle"></i> Présentation des services</div>
