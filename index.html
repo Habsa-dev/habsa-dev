@@ -420,7 +420,7 @@
            SECTIONS BASE
         ===================== */
         section {
-            padding: 100px 0;
+            padding: 120px 0;
         }
 
         .section-header {
@@ -479,11 +479,12 @@
             padding: 40px 24px;
             text-align: center;
             transition: var(--transition);
+            box-shadow: var(--shadow-sm);
         }
 
         .stat-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-glass);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-md);
         }
 
         .stat-icon {
@@ -557,10 +558,11 @@
             border-radius: var(--radius);
             padding: 28px;
             transition: var(--transition);
+            box-shadow: var(--shadow-sm);
         }
 
         .profile-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-3px) scale(1.02);
             box-shadow: var(--shadow-md);
             border-color: var(--primary);
         }
@@ -818,11 +820,12 @@
             padding: 32px 24px;
             text-align: center;
             transition: var(--transition);
+            box-shadow: var(--shadow-sm);
         }
 
         .skill-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-glass);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-md);
             border-color: var(--primary);
         }
 
@@ -1107,11 +1110,12 @@
             padding: 32px;
             border: 1px solid rgba(99, 102, 241, 0.1);
             transition: var(--transition);
+            box-shadow: var(--shadow-sm);
         }
 
         .testimonial-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-glass);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-md);
         }
 
         .testimonial-icon {
@@ -1181,11 +1185,12 @@
             overflow: hidden;
             margin-bottom: 40px;
             transition: var(--transition);
+            box-shadow: var(--shadow-sm);
         }
 
         .project-block:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-glass);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: var(--shadow-md);
         }
 
         .project-header {
@@ -1248,11 +1253,13 @@
             border-radius: var(--radius);
             padding: 20px;
             transition: var(--transition);
+            box-shadow: var(--shadow-sm);
         }
 
         .project-role:hover, .project-result:hover {
             border-color: var(--primary);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
         }
 
         .project-role h4, .project-result h4 {
