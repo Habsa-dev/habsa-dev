@@ -1090,87 +1090,6 @@
         }
 
         /* =====================
-           TESTIMONIALS SECTION
-        ===================== */
-        .testimonials-section {
-            background: linear-gradient(135deg, #f8fafc 0%, #dbeafe 50%, #eff6ff 100%);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: 32px;
-            border: 1px solid rgba(99, 102, 241, 0.1);
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-md);
-        }
-
-        .testimonial-icon {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            color: var(--white);
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-text {
-            font-size: 0.95rem;
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .testimonial-author-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .testimonial-author-info h4 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 2px;
-        }
-
-        .testimonial-author-info p {
-            font-size: 0.85rem;
-            color: var(--gray-500);
-        }
-
-        /* =====================
            PROJECTS
         ===================== */
         #projects {
@@ -1827,8 +1746,6 @@
             .netsysteme-screenshots { grid-template-columns: 1fr; }
             .netsysteme-features { grid-template-columns: 1fr; }
 
-            .testimonials-grid { grid-template-columns: 1fr; }
-
             .section-title { font-size: 1.8rem; }
 
             .project-header { flex-direction: column; text-align: center; }
@@ -1876,7 +1793,6 @@
             <a href="#skills">Compétences</a>
             <a href="#netsysteme-premium">NETSYSTEME</a>
             <a href="#projects">Projets</a>
-            <a href="#testimonials">Témoignages</a>
             <a href="#contact">Contact</a>
             <a href="Habsa Deme_CV.pdf" download class="nav-cta"><i class="fas fa-download"></i> CV</a>
         </div>
@@ -2303,52 +2219,6 @@
                     <h3 class="timeline-title">Licence 1 Informatique</h3>
                     <div class="timeline-subtitle">BEM TECH, Dakar</div>
                     <p class="timeline-desc">Introduction à l'informatique, mathématiques pour l'informatique et initiation au développement. Début du parcours en programmation.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ========== TESTIMONIALS ========== -->
-<section class="testimonials-section" id="testimonials">
-    <div class="container">
-        <div class="section-header" data-aos="fade-up">
-            <div class="section-tag">Recommandations</div>
-            <h2 class="section-title">Ce qu'on dit de moi</h2>
-            <p class="section-subtitle">Témoignages de mes professeurs et collègues</p>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="testimonial-icon"><i class="fas fa-quote-left"></i></div>
-                <p class="testimonial-text">Habsa est une étudiante exceptionnelle, très motivée et curieuse. Elle a démontré d'excellentes compétences en data science et développement web lors de ses projets.</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-author-avatar">PM</div>
-                    <div class="testimonial-author-info">
-                        <h4>Professeur de Data Science</h4>
-                        <p>BEM TECH</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="testimonial-icon"><i class="fas fa-quote-left"></i></div>
-                <p class="testimonial-text">Pendant son stage, Habsa a livré une application Django complète et fonctionnelle. Son travail a dépassé nos attentes. Très professionnelle et rapide à apprendre.</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-author-avatar">NS</div>
-                    <div class="testimonial-author-info">
-                        <h4>Manager Technique</h4>
-                        <p>NETSYSTEME</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="testimonial-icon"><i class="fas fa-quote-left"></i></div>
-                <p class="testimonial-text">Collaboratrice efficace et créative. Habsa apporte toujours des solutions innovantes et travaille bien en équipe. Je recommande vivement ses compétences.</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-author-avatar">CM</div>
-                    <div class="testimonial-author-info">
-                        <h4>Collègue de Projet</h4>
-                        <p>BEM TECH</p>
-                    </div>
                 </div>
             </div>
         </div>
